@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	
+	<bean id="my" class="spring.di.ex02.MyInfo">
+		<constructor-arg value="변우석"/>
+		<constructor-arg value="34"/>
+		<constructor-arg>
+			<value>서울시 강남구 청담동 어딘가 </value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="person" class="spring.di.ex02.Person">
+		<!--MyInfo 생성자 주입 -->
+		<constructor-arg ref="my"/>
+		
+		<!-- 학교명 setter 주입 -->
+		<property name="schoolName" value="쌍용고등학교"/>
+	</bean>
+
+</beans>

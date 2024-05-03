@@ -1,0 +1,10 @@
+package spring.day0502.shop;
+
+public class ShopDto {
+	
+	public String sang;
+	public int price;
+	public String color;
+	public String guipday;
+
+}

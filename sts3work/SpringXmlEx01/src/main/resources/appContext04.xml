@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	
+	<!-- student Bean -->
+	<bean id="stud" class="spring.di.ex04.Student">
+		<constructor-arg value="이민용"/>
+		<constructor-arg value="28"/>
+		<property name="hobby">
+			<list>
+				<value>넷플릭스 감상</value>
+				<value>게임</value>
+				<value>운동</value>
+				<value>코딩</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Sungjuk Bean -->
+	<bean id="sj" class="spring.di.ex04.Sungjuk">
+		<property name="kor" value="94"/>
+		<property name="eng" value="81"/>
+		<property name="math" value="79"/>
+		<property name="stu" ref="stud"/>
+	</bean>
+
+</beans>

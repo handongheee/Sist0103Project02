@@ -1,0 +1,11 @@
+INDEX VERSION 1.131+/Users/han/sist0103/work/macwork/sts3work/.metadata/.plugins/org.eclipse.jdt.core
+1740314637.index
+1615765864.index
+472065526.index
+451007152.index
+2672877192.index
+832437479.index
+1605041107.index
+1865797976.index
+2952358212.index
+2325145299.index

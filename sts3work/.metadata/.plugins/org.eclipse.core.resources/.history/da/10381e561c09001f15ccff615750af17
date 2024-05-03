@@ -1,0 +1,10 @@
+package spring.mvc.test;
+
+import java.util.ArrayList;
+
+public class InfoDto {
+	private String name;
+	private String color;
+	private ArrayList<String> hobby;
+	private String lang;
+}

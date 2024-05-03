@@ -1,0 +1,23 @@
+package spring.day0502.shop;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndViewDefiningException;
+
+@Controller
+public class IndexFormController {
+	
+	@GetMapping ("/data/myform")
+	public String form01() {
+		
+		return "form01";
+	}
+	
+	// get방식 전송
+	@GetMapping ("/data/read01")
+	public ModelAndView read01(@RequestParam("name")String name	) {
+		
+	}
+}

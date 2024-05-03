@@ -1,0 +1,5 @@
+package spring.day0502.shop;
+
+public class ShopController {
+	
+}

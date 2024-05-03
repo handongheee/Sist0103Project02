@@ -1,0 +1,27 @@
+package spring.mvc.today;
+
+import java.util.Date;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+	
+	@GetMapping (value="/")
+	public String home(Model model) {
+		// request에 저장
+		model.addAttribute("msg", "HomeControlle 로부터 포워드됨");
+		model.addAttribute("today", new Date());
+		
+		return "home"; // WEB-INF/day0502/home.jsp
+		
+	}
+	
+	@GetMapping ("")
+	public String appleList() {
+		
+		
+	}
+}

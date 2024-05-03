@@ -1,0 +1,8 @@
+package spring.mvc.today;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HelloController {
+
+}

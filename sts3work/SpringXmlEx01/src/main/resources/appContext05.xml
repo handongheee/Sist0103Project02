@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	
+	<bean id="sinfo" class="spring.di.ex05.SawonInfo">
+		<constructor-arg value="마동석"/>
+		<constructor-arg value="차장"/>
+		<property name="buseo">
+			<list>
+				<value>기획팀</value>
+				<value>마케팅팀</value>
+				<value>재무팀</value>
+				<value>전략팀</value>
+			</list>
+		</property>
+		<property name="pay" value="5000000"/>
+	</bean>
+	
+	<bean id="einfo" class="spring.di.ex05.Emp">
+		<constructor-arg value="삼성전자"/>
+		<property name="info" ref="sinfo"/>
+		<property name="emploc" value="서울 강남구"></property>
+	</bean>
+
+</beans>

@@ -1,0 +1,14 @@
+package spring.day0502.shop;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class IndexFormController {
+	
+	@GetMapping ("/data/myform")
+	public String form01() {
+		
+		return "form01";
+	}
+}

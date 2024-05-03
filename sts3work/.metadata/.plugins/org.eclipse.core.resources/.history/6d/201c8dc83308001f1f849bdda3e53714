@@ -1,0 +1,23 @@
+package spring.mvc.quiz;
+
+public class QuizController {
+	
+	// 3개의 매핑주소를 포워드한 주소로 연결되게 만들고 결과물은 해당 포워드된 jsp 파일에서 나타나게 한다.
+	
+	public String happy() {
+		
+		return "";
+	}
+	
+	public String hello() {
+
+		return "";
+	}
+
+	public String nice() {
+
+		return "";
+	}
+
+
+}

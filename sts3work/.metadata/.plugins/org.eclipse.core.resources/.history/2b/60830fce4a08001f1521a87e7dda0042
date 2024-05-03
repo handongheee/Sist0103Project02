@@ -1,0 +1,21 @@
+package spring.day0502.shop;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ShopController {
+	
+	@GetMapping("/")
+	public String start() {
+		return "redirect:login/form"; 
+	}
+	
+	@GetMapping ("/login/form")
+	public String form() {
+		return "form";
+	}
+	
+	// 폼 전송
+	@GetMapping ("/login/read")
+}
