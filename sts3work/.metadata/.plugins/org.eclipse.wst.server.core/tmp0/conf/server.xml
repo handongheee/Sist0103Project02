@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="/Users/han/sist0103/work/macwork/sts3work/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/han/sist0103/work/macwork/sts3work/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/SpringMvcTest" path="/test" reloadable="true" source="org.eclipse.jst.jee.server:SpringMvcTest"/></Host>
+      <Context docBase="/Users/han/sist0103/work/macwork/sts3work/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/han/sist0103/work/macwork/sts3work/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/SpringMysqlMybatis" path="/may" reloadable="true" source="org.eclipse.jst.jee.server:SpringMysqlMybatis"/></Host>
     </Engine>
   </Service>
 </Server>
