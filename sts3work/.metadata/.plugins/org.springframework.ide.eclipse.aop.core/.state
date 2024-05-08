@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="SpringMysqlMybatis"/>
 <aop-project name="SpringMvcEx03"/>
 <aop-project name="SpringMvcEx04"/>
 <aop-project name="SpringMvcQuiz"/>
@@ -8,4 +9,5 @@
 <aop-project name="SpringMvcTest"/>
 <aop-project name="SpringMvcFormEx05"/>
 <aop-project name="SpringXmlEx01"/>
+<aop-project name="Spring DbTest"/>
 </aop-reference-model>

@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=Spring DbTest/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.mysql.coffee{MyshopDaoInter.java[MyshopDaoInter" modifiers="513" timestamp="1715132630000"/>
+    <typeInfo handle="=SpringMysqlMybatis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.db.may{SpringCarDaoInter.java[SpringCarDaoInter" modifiers="513" timestamp="1715148484000"/>
+    <typeInfo handle="=SpringMysqlMybatis/\/Library\/Java\/JavaVirtualMachines\/jdk-11.0.22-x86.jdk\/Contents\/Home\/lib\/jrt-fs.jar`java.desktop=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;javax.swing(SpinnerModel.class[SpinnerModel" modifiers="1537" timestamp="1703030867000"/>
+    <typeInfo handle="=SpringMysqlMybatis/\/Library\/Java\/JavaVirtualMachines\/jdk-11.0.22-x86.jdk\/Contents\/Home\/lib\/jrt-fs.jar`java.desktop=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;javax.swing.text(Caret.class[Caret" modifiers="1537" timestamp="1703030867000"/>
+    <typeInfo handle="=SpringMysqlMybatis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.db.carmember{CarMemberDaoInter.java[CarMemberDaoInter" modifiers="513" timestamp="1715156637000"/>
+</typeInfoHistroy>

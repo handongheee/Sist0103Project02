@@ -49,6 +49,8 @@ INDEX VERSION 1.131
 /SpringMvcTest/src/main/java
 /Users/han/sist0103/work/macwork/sts3work/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2695453307.index
 /SpringMvcEx04/src/main/java
+/Users/han/sist0103/work/macwork/sts3work/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1458992312.index
+/SpringMysqlMybatis/src/main/java
 /Users/han/sist0103/work/sts3work/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/233225323.index
 /SpringMvcQuiz/src/main/java
 /Users/han/sist0103/work/macwork/sts3work/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/526705299.index
