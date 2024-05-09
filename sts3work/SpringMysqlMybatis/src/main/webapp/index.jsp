@@ -20,12 +20,10 @@
 <body>
 	<div style="margin: 100px 200px;">
 		<%-- <c:redirect url="samsung/list"/> --%>
-		<button type="button" class="btn btn-info"
-			onclick="location.href='samsung/list'">차량등록정보</button>
+		<button type="button" class="btn btn-info" onclick="location.href='samsung/list'">차량등록정보</button>
 		<br>
 		<br>
-		<button type="button" class="btn btn-info"
-			onclick="location.href='carmember/list'">고객정보</button>
+		<button type="button" class="btn btn-info" onclick="location.href='carmember/list'">고객정보</button>
 	</div>
 </body>
 </html>

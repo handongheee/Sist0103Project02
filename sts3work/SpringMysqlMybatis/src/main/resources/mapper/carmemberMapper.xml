@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.db.carmember.CarMemberDao">
 	<!-- insert -->
-	<insert id="insertMember" parameterType="cmdto">
-		insert into carmember (name, hp, addr, gaipday) values (#{name}, #{hp}, #{addr}, now())
+	<insert id="insertOfCarMember" parameterType="cmdto">
+		insert into carmember (name,hp,addr,gaipday) values (#{name}, #{hp}, #{addr}, now())
 	</insert>
+	
+	<!-- 조회 -->
+	<select id="totalCountOfMember" resultType="int">
+		select count(*) from carmember
+	</select>
+	<select id="selectAllOfMember" resultType="cmdto">
+		select * from carmember order by num asc
+	</select>
+	
+	<!-- 수정 -->
+	<select id="selectOneOfCarMember" parameterType="String" resultType="cmdto">
+		select * from carmember where num=#{num}
+	</select>
+	<update id="updateOfCarMember" parameterType="cmdto">
+		update carmember set name=#{name}, hp=#{hp}, addr=#{addr} where num=#{num}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="deleteOfCarMember" parameterType="String">
+		delete from carmember where num=#{num}
+	</delete>
+
 </mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberDao">
+	<select id="idCheckOfMember" resultType="int" parameterType="String">
+		select count(*) from smember where id=#{id}
+	</select>
+	
+	<!-- 목록 조회 -->
+	<select id="totalCountOfMember" resultType="int">
+		select count(*) from smember
+	</select>
+	<select id="selectAllOfMember" resultType="mdto">
+		select * from smember order by num asc
+	</select>
+	
+	<!-- insert -->
+	<insert id="insertOfMember" parameterType="mdto">
+		insert into smember values (null, #{name}, #{id}, #{pass}, #{hp}, now())
+	</insert>
+</mapper>

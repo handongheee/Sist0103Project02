@@ -18,36 +18,36 @@
 <title>memberForm</title>
 </head>
 <body>
-	<form action="write" method="post">
-		<table class="table table-bordered" style="width: 400px;">
-			<tr>
-				<th>이름</th>
-				<td>
-					<input type="text" name="name" style="width: 120px;" class="form-control" required="required">
-				</td>
-			</tr>
+	<div style="margin: 50px 100px; width: 400px;">
+		<form action="write" method="post">
+			<table class="table table-bordered">
+				<caption align="top">
+					<b>고객 정보 입력</b>
+				</caption>
+				<tr>
+					<th width="100" class="table-light">고객명</th>
+					<td width="200"><input type="text" name="name" style="width: 120px;" required="required" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<th class="table-light" width="100">연락처</th>
+					<td width="200"><input type="text" name="hp" style="width: 150px;" required="required" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<th class="table-light" width="100">주소</th>
+					<td width="200"><input type="text" name="addr" style="width: 250px;" required="required" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button type="submit" class="btn btn-outline-success">DB저장</button>
+						<button type="button" class="btn btn-outline-info" onclick="location.href='list'">고객목록</button>
+					</td>
+				</tr>
+			</table>
+		</form>
 
-			<tr>
-				<th>전화번호</th>
-				<td>
-					<input type="text" name="hp" style="width: 150px;" class="form-control" required="required">
-				</td>
-			</tr>
-
-			<tr>
-				<th>주소</th>
-				<td>
-					<input type="text" name="hp" style="width: 150px;" class="form-control" required="required">
-				</td>
-			</tr>
-
-			<tr>
-				<td colspan="2" align="center">
-					<button type="submit" class="btn btn-outline-success">DB저장</button>
-					<button type="button" class="btn btn-outline-info" onclick="location.href='list'">목록으로</button>
-				</td>
-			</tr>
-		</table>
-	</form>
+	</div>
 </body>
 </html>
