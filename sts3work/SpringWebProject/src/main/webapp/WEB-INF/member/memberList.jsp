@@ -43,7 +43,7 @@ rel="stylesheet">
 				<td>${dto.hp }</td>
 				<td>${dto.gaipday }</td>
 				<td>
-					<button type="button" class="btn btn-outline-warning btn-sm" onclick="location.href='updateForm?num=${dto.num}'">수정</button>
+					<button type="button" class="btn btn-outline-warning btn-sm" onclick="location.href='updateform?num=${dto.num}'">수정</button>
 					<button type="button" class="btn btn-outline-danger btn-sm" onclick="location.href='delete?num=${dto.num}'">삭제</button>
 				</td>
 			</tr>

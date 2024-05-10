@@ -71,19 +71,20 @@
 		<!-- 0508 추가 -->
 		
 		<!-- 파일업로드 -->
-		<!-- fileuoload add 2개 -->
+		<!-- fileupload add 2개 -->
 		<!-- commons-io -->
-			<dependency>
-			    <groupId>commons-io</groupId>
-			    <artifactId>commons-io</artifactId>
-			    <version>2.6</version>
-			</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+	
 		<!-- commons-fileupload -->
-			<dependency>
-			    <groupId>commons-fileupload</groupId>
-			    <artifactId>commons-fileupload</artifactId>
-			    <version>1.3.1</version>
-			</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>
 		<!-- 파일업로드 -->
 				
 		<!-- AspectJ -->
