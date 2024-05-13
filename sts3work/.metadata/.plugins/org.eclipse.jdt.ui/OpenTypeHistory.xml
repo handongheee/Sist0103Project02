@@ -5,5 +5,7 @@
     <typeInfo handle="=SpringMysqlMybatis/\/Library\/Java\/JavaVirtualMachines\/jdk-11.0.22-x86.jdk\/Contents\/Home\/lib\/jrt-fs.jar`java.desktop=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;javax.swing(SpinnerModel.class[SpinnerModel" modifiers="1537" timestamp="1703030867000"/>
     <typeInfo handle="=SpringMysqlMybatis/\/Library\/Java\/JavaVirtualMachines\/jdk-11.0.22-x86.jdk\/Contents\/Home\/lib\/jrt-fs.jar`java.desktop=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;javax.swing.text(Caret.class[Caret" modifiers="1537" timestamp="1703030867000"/>
     <typeInfo handle="=SpringMysqlMybatis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.db.carmember{CarMemberDaoInter.java[CarMemberDaoInter" modifiers="513" timestamp="1715218247000"/>
-    <typeInfo handle="=SpringWebProject/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.db.member{MemberDaoInter.java[MemberDaoInter" modifiers="513" timestamp="1715233158000"/>
+    <typeInfo handle="=SpringWebProject/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.db.member{MemberDaoInter.java[MemberDaoInter" modifiers="513" timestamp="1715304773000"/>
+    <typeInfo handle="=SpringWebProject/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.db.board{BoardDaoInter.java[BoardDaoInter" modifiers="513" timestamp="1715564585000"/>
+    <typeInfo handle="=SpringReBoardLast/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.mvc.data{BoardDaoInter.java[BoardDaoInter" modifiers="513" timestamp="1715571057000"/>
 </typeInfoHistroy>

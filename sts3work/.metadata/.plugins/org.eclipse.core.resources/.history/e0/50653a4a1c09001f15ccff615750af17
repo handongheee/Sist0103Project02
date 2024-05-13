@@ -1,6 +1,0 @@
-package spring.mvc.test;
-
-public class InfoDto {
-	private String name;
-	
-}

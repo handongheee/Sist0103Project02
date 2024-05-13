@@ -20,6 +20,11 @@
 		select * from sboard order by num desc limit #{start}, #{perpage}
 	</select>
 	
+	<!-- 0513 ajax 출력 -->
+	<select id="selectPhotoOfBoard" resultType="bdto">
+		select * from sboard where photo!='no' order by num desc
+	</select>
+	
 	<!-- 글 상세보기 -->
 	<select id="selectOneOfBoard" parameterType="int" resultType="bdto">
 		select * from sboard where num=#{num}
@@ -29,4 +34,18 @@
 	<update id="updateReadCountOfBoard" parameterType="int">
 		update sboard set readcount=readcount+1 where num=#{num}
 	</update>
+	
+	<!-- 글수정 (사진이 있는 경우에만 사진수정) -->
+	<update id="updateOfBoard" parameterType="bdto">
+		update sboard set subject=#{subject}, content=#{content}
+		<if test="photo!=null">
+			,photo=#{photo}
+		</if>
+		where num=#{num}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="deleteOfBoard" parameterType="int">
+		delete from sboard where num=#{num}
+	</delete>
 </mapper>

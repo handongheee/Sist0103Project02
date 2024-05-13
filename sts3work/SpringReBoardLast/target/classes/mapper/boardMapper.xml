@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardDao">
+	<select id="TotalCountOfBoard" resultType="int">
+		select count(*) from reboard
+	</select>
+	
+	<!-- num의 max값, null일 경우 0 -->
+	<select id="MaxNumOfBoard" resultType="int">
+		select ifnull (max(num),0) from reboard
+	</select>
+	
+	<!-- 같은 그룹 중, step보다 큰 데이터는 모두 +1 (정렬하기 위함) -->
+	<update id="UpdateStepOfBoard" parameterType="HashMap">
+		update reboard set restep=restep+1 where regroup=#{regroup} and restep>#{restep}
+	</update>
+	
+	<!-- insert:원글,새글 모두 해당 -->
+	<insert id="insertOfBoard" parameterType="bdto">
+		insert into reboard(writer, pass, subject, content, photo, regroup, restep, relevel, writeday) 
+		values (#{writer}, #{pass}, #{subject}, #{content}, #{photo}, #{regroup}, #{restep}, #{relevel}, now())
+	</insert>
+	
+	<!-- 페이징 처리할 list -->
+	<!-- 그룹은 내림차, step은 오름차 -->
+	<select id="SelectPagingListOfBoard" parameterType="HashMap" resultType="bdto">
+		select * from reboard order by regroup desc, restep asc limit #{start}, #{perpage}
+	</select>
+	
+	<!-- 상세보기 -->
+	<update id="UpdateReadCountOfBoard" parameterType="int">
+		update reboard set readcount=readcount+1 where num=#{num}
+	</update>
+	<select id="getDataOfBoard" parameterType="int" resultType="bdto">
+		select * from reboard where num=#{num}
+	</select>
+</mapper>

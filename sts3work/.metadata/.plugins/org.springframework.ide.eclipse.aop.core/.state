@@ -3,6 +3,7 @@
 <aop-project name="SpringMysqlMybatis"/>
 <aop-project name="SpringWebProject"/>
 <aop-project name="SpringMvcEx04"/>
+<aop-project name="SpringReBoardLast"/>
 <aop-project name="SpringMvcJsonEx07"/>
 <aop-project name="Spring DbTest"/>
 <aop-project name="SpringMvcEx03"/>

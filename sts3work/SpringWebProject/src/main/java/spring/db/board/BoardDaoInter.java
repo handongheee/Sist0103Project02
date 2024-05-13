@@ -13,5 +13,14 @@ public interface BoardDaoInter {
 	public BoardDto getData(int num);
 	public void updateReadcount(int num); // 조회수
 	
+	// 페이징
 	public List<BoardDto> getList(int start, int perpage);
+	
+	// 수정, 삭제
+	public void updateBoard(BoardDto dto);
+	public void deleteBoard(int num);
+	
+	// ajax
+	public List<BoardDto> getPhotoLists();
+	
 }

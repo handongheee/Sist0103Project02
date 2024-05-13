@@ -158,5 +158,101 @@ public class BoardController {
 		return "board/content";
 	}
 	
+	// 0513
+	// 업데이트폼 랜딩
+	@GetMapping("/updateform")
+	public ModelAndView uform(@RequestParam int num, 
+			@RequestParam String currentPage) {
+		ModelAndView model=new ModelAndView();
+		
+		// num에 따른 dto값
+		BoardDto dto=dao.getData(num);
+		
+		// 저장
+		model.addObject("dto", dto);
+		model.addObject("currentPage", currentPage);
+		
+		// 포워드
+		model.setViewName("board/updateForm");
+		
+		return model;
+	}
+	
+	// update
+	@PostMapping("/update")
+	public String update(@ModelAttribute BoardDto dto, @RequestParam ArrayList<MultipartFile> upload,
+			HttpSession session, @RequestParam String currentPage) {
+
+		// 이미지가 업로드될 폴더
+		String path = session.getServletContext().getRealPath("/WEB-INF/photo");
+		System.out.println(path);
+
+		// 이미지 업로드 안할 경우 "no" or null로 저장
+		String photo = "";
+
+		// 사진 안했을 경우는 null, 사진 선택을 하면 ','로 나열
+		if (upload.get(0).getOriginalFilename().equals("")) {
+			photo=null;
+		} else {
+			for (MultipartFile f : upload) {
+				String fname = f.getOriginalFilename();
+				photo += fname + ",";
+
+				// 실제 업로드
+				try {
+					f.transferTo(new File(path + "/" + fname));
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+			// photo에서 마지막 컴마 제거 후 photo에 적용
+			photo = photo.substring(0, photo.length() - 1);
+		}
+
+		// dto의 photo에 넣어주기
+		dto.setPhoto(photo);
+
+		// update 호출
+		dao.updateBoard(dto);
+
+		// 목록이 아닌 상세보기로 가려면
+		int num = dao.getMaxNum();
+
+		return "redirect:content?num=" + num + "&currentPage=" + currentPage;
+	}
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam int num, @RequestParam String currentPage, HttpSession session) {
+		// 이미지 서버에서 삭제
+		String photo=dao.getData(num).getPhoto();
+		
+		if(!photo.equals("no")) {
+			String []fName=photo.split(",");
+			
+			// 실제 업로드 경로
+			String path=session.getServletContext().getRealPath("/WEB-INF/photo");
+			
+			for(String f:fName) {
+				File file=new File(path+"/"+f);
+				file.delete();
+			}
+		}
+		
+		// DB 삭제
+		dao.deleteBoard(num);
+			
+		return "redirect:list?currentPage="+currentPage;
+	}
+	
+	@GetMapping("/list2")
+	public String list2() {
+		return "/board/ajaxList";
+	}
+	
 	
 }

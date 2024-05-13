@@ -60,4 +60,25 @@ public class BoardDao implements BoardDaoInter {
 		return session.selectList("selectPagingListOfMember", map);
 	}
 
+	// 수정
+	@Override
+	public void updateBoard(BoardDto dto) {
+		// TODO Auto-generated method stub
+		session.update("updateOfBoard", dto);
+	}
+
+	// 삭제
+	@Override
+	public void deleteBoard(int num) {
+		// TODO Auto-generated method stub
+		session.delete("deleteOfBoard", num);
+	}
+
+	// ajax
+	@Override
+	public List<BoardDto> getPhotoLists() {
+		// TODO Auto-generated method stub
+		return session.selectList("selectPhotoOfBoard");
+	}
+
 }
