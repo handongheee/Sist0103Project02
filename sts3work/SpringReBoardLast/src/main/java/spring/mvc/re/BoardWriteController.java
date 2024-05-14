@@ -40,7 +40,7 @@ public class BoardWriteController {
 		String restep=map.get("restep");
 		String relevel=map.get("relevel");
 		
-		System.out.println(currentPage+", "+num); // 새글이면 null
+		System.out.println(currentPage+", "+num); // 새글이면 null, null
 		
 		// 입력폼에 hidden으로 넣어줘야함 - 답글일 때를 대비
 		mview.addObject("currentPage", currentPage==null?"1":currentPage);
@@ -60,7 +60,8 @@ public class BoardWriteController {
 	@PostMapping("/board/insert")
 	public String insert(@ModelAttribute BoardDto dto,
 			@RequestParam ArrayList<MultipartFile> upload,
-			HttpSession session) {
+			HttpSession session,
+			@RequestParam int currentPage) {
 		String path=session.getServletContext().getRealPath("/WEB-INF/photo");
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
 		System.out.println(path);
@@ -92,6 +93,9 @@ public class BoardWriteController {
 		dto.setPhoto(photo);
 		dao.insertBoard(dto);
 		
-		return "redirect:list";
+		// 0514 글 추가 후 목록이 아닌 내용보기로 가려면
+		int num=dao.getMaxNum();
+		
+		return "redirect:content?num="+num+"&currentPage="+currentPage;
 	}
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import spring.mvc.answerdata.AnswerDao;
 import spring.mvc.data.BoardDaoInter;
 import spring.mvc.data.BoardDto;
 
@@ -16,6 +17,9 @@ public class BoardListController {
 	
 	@Autowired
 	BoardDaoInter dao;
+	
+	@Autowired
+	AnswerDao adao;
 	
 	@GetMapping("/")
 	public String start() {
@@ -65,9 +69,14 @@ public class BoardListController {
 		List<BoardDto> list=dao.getList(start, perPage);
 		// --------------------------------------------------------------------------
 		
+		// 0514 리스트에 각 글에 대한 개수 추가하기
+		for(BoardDto d:list) {
+			d.setAcount(adao.getAnswerList(d.getNum()).size());
+		}
+		
 		// request 저장
-		mview.addObject("totalCount", totalCount); // 저장
-		mview.addObject("list", list);
+		mview.addObject("totalCount", totalCount); 
+		mview.addObject("list", list); // 댓글을 포함한 후 전달
 		mview.addObject("no", no);
 		mview.addObject("startPage", startPage);
 		mview.addObject("endPage", endPage);

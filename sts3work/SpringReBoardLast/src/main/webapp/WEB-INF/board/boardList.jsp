@@ -60,12 +60,20 @@ rel="stylesheet">
 							</c:if>
 							
 							<!-- 진짜 제목 -->
-							<a href="content?num=${dto.num }&currentPage=${currentPage}" style="text-decoration: none; color:black;">${dto.subject }</a>
+							<a href="content?num=${dto.num }&currentPage=${currentPage}" style="text-decoration: none; color:black;">${dto.subject }</a> 
 							
 							<!-- 사진이 있을 경우 아이콘 -->
 							<c:if test="${dto.photo!='no' }">
 								&nbsp;<i class="bi bi-image" style="color:#aaa;"></i>
 							</c:if>
+							
+							<!-- 0514 댓글 개수 출력 -->
+							<c:if test="${dto.acount>0 }">
+								&nbsp;&nbsp;
+								<a style="color: red; text-decoration: none;" href="content?num=${dto.num }&currentPage=${currentPage}">[${dto.acount }]</a>
+							</c:if>
+							
+							
 						</td>
 						
 						<td align="center">${dto.writer }</td>

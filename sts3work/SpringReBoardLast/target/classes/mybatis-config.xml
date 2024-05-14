@@ -4,5 +4,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="bdto" type="spring.mvc.data.BoardDto" />
+		<typeAlias alias="adto" type="spring.mvc.answerdata.AnswerDto"/>
 	</typeAliases>
 </configuration>

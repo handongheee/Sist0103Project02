@@ -12,9 +12,12 @@
 href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Noto+Sans+KR:wght@100..900&display=swap"
 rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<title>Insert title here</title>
+<title>passFail</title>
 </head>
 <body>
-	
+	<script type="text/javascript">
+		alert("비밀번호가 일치하지 않습니다.");
+		history.back();
+	</script>
 </body>
 </html>

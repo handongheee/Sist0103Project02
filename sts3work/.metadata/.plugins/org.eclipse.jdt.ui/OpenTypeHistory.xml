@@ -7,5 +7,5 @@
     <typeInfo handle="=SpringMysqlMybatis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.db.carmember{CarMemberDaoInter.java[CarMemberDaoInter" modifiers="513" timestamp="1715218247000"/>
     <typeInfo handle="=SpringWebProject/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.db.member{MemberDaoInter.java[MemberDaoInter" modifiers="513" timestamp="1715304773000"/>
     <typeInfo handle="=SpringWebProject/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.db.board{BoardDaoInter.java[BoardDaoInter" modifiers="513" timestamp="1715564585000"/>
-    <typeInfo handle="=SpringReBoardLast/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.mvc.data{BoardDaoInter.java[BoardDaoInter" modifiers="513" timestamp="1715571057000"/>
+    <typeInfo handle="=SpringReBoardLast/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;spring.mvc.data{BoardDaoInter.java[BoardDaoInter" modifiers="513" timestamp="1715578464000"/>
 </typeInfoHistroy>

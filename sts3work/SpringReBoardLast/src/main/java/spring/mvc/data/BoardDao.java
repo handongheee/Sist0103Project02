@@ -90,6 +90,29 @@ public class BoardDao implements BoardDaoInter {
 		// TODO Auto-generated method stub
 		return session.selectOne("getDataOfBoard", num);
 	}
+
+	// 비밀번호 체크, 수정, 삭제
+	@Override
+	public int getCheckPass(int num, int pass) {
+		// TODO Auto-generated method stub
+		HashMap<String, Integer> map=new HashMap<String, Integer>();
+		map.put("num", num);
+		map.put("pass", pass);
+		
+		return session.selectOne("CheckEqualPassOfBoard", map);
+	}
+
+	@Override
+	public void updateBoard(BoardDto dto) {
+		// TODO Auto-generated method stub
+		session.update("UpdateOfBoard", dto);
+	}
+
+	@Override
+	public void deleteBoard(int num) {
+		// TODO Auto-generated method stub
+		session.delete("DeleteOfBoard", num);
+	}
 	
 
 }
