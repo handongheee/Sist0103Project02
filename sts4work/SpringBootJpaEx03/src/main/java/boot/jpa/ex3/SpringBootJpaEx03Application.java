@@ -8,9 +8,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({"myshop.data"})
-@EntityScan("myshop.data") // dto 인식
-@EnableJpaRepositories("myshop.data") // dao 인식
+@ComponentScan({"*.data"})
+@EntityScan("*.data") // dto 인식
+@EnableJpaRepositories("*.data") // dao 인식
 public class SpringBootJpaEx03Application {
 
 	public static void main(String[] args) {
