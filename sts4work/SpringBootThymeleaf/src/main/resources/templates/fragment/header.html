@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<title>header</title>
+</head>
+<body>
+	<div>
+		<header th:fragment="header">
+			<a th:href="@{/}">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/list}">Shop</a> &nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/login1}">ADMIN</a> &nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/login2}">User</a> &nbsp;&nbsp;&nbsp;&nbsp;
+		</header>
+	</div>
+</body>
+</html>

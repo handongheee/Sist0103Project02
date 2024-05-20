@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Noto+Sans+KR:wght@100..900&display=swap"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<title>detail</title>
+</head>
+<body>
+	<h3>상세페이지</h3>
+	<div th:object="${dto}">
+		<h4>
+			번호: <span th:text="*{num}"></span>
+		</h4>
+		<h4>
+			상품명: <span th:text="*{sangpum}"></span>
+		</h4>
+		<h4>
+			수량: <span th:text="*{su}"></span>
+		</h4>
+		<h4>
+			단가: <span th:text="*{dan}"></span>
+		</h4>
+		<div th:style="background-color:'+*{color}+';">
+			색상: <span th:text="*{color}"></span>
+		</div>
+	</div>
+
+	<hr>
+	<div th:object="${dto}">
+		<h4>번호: [[*{num}]]</h4>
+		<h4>상품명: [[*{sangpum}]]</h4>
+		<h4>수량: [[*{su}]]</h4>
+		<h4>단가:[[*{dan}]]</h4>
+		<div
+			th:style="'background-color:'+*{color}+'; width:200px;font-size:2em;'">색상:[[*{color}]]</div>
+	</div>
+
+	<hr>
+
+	<div>
+		<h4>번호: [[${dto.num}]]</h4>
+		<h4>상품명: [[${dto.sangpum}]]</h4>
+		<h4>수량: [[${dto.su}]]</h4>
+		<h4>단가: [[${dto.dan}]]</h4>
+		<div
+			th:style="'background-color:'+${dto.color}+'; width:200px;font-size:2em;'">
+			색상: <span>[[${dto.color}]]</span>
+		</div>
+	</div>
+</body>
+</html>

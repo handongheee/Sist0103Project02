@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<title>mycarList</title>
+<style type="text/css">
+	div.box{
+		width: 30px;
+		height: 30px;
+		border-radius: 100px;
+		
+	}
+</style>
+</head>
+<body>
+	<div style="margin: 100px 100px;">
+		<h3 class="alert alert-danger">MyCar 목록 출력</h3>
+		<h5>총 [[${total}]]개의 자동차 정보가 존재합니다.
+		
+		<button type="button" class="btn btn-outline-success" style="margin-right: 100px;" onclick="location.href='writeform'">자동차 정보 등록</button>
+		</h5>
+		<hr>
+		
+		<table class="table table-bordered">
+			<tr class="table-light">
+				<th width="50">번호</th>
+				<th width="200">자동차명</th>
+				<th width="80">색상</th>
+				<th width="120">단가</th>
+			</tr>
+			
+			<!-- list 반복문 -->
+			<tr th:each="dto, iter:${list}">
+				<td align="center">[[${iter.count}]]</td>
+				<td>
+					<a>
+						<img alt="" th:src="@{|/save/${dto.carphoto}|}" style="width: 50px;">
+						[[${dto.carname}]]
+					</a>
+				
+				</td>
+				<td>
+					<div class="box" th:style="'background-color:'+${dto.carcolor}">
+						
+					</div>
+				</td>
+				
+				<td>
+					<span th:text="${#numbers.formatInteger(dto.carprice,0,'COMMA')}"></span>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</body>
+</html>
