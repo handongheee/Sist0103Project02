@@ -28,9 +28,9 @@
 		
 		<table class="table table-bordered">
 			<tr class="table-light">
-				<th width="50">번호</th>
+				<th width="30">번호</th>
 				<th width="200">자동차명</th>
-				<th width="80">색상</th>
+				<th width="50">색상</th>
 				<th width="120">단가</th>
 			</tr>
 			
@@ -38,9 +38,14 @@
 			<tr th:each="dto, iter:${list}">
 				<td align="center">[[${iter.count}]]</td>
 				<td>
-					<a>
+					<a th:href="@{/detail(num=${dto.num})}" style="text-decoration: none; color: black;">
 						<img alt="" th:src="@{|/save/${dto.carphoto}|}" style="width: 50px;">
-						[[${dto.carname}]]
+						 [[${dto.carname}]] 
+						 
+						 <!-- 댓글 개수 출력 -->
+						 <span style="color:orange; margin-left: 5px;" th:if="${dto.commentcount>0}">
+						 	([[${dto.commentcount}]])
+						 </span>
 					</a>
 				
 				</td>
@@ -51,7 +56,7 @@
 				</td>
 				
 				<td>
-					<span th:text="${#numbers.formatInteger(dto.carprice,0,'COMMA')}"></span>
+					<span th:text="${#numbers.formatInteger(dto.carprice,0,'COMMA')}"></span>원
 				</td>
 			</tr>
 		</table>

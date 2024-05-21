@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "mycar2")
+@Table(name = "mycar")
 @AllArgsConstructor // 명시적 생성자
 @NoArgsConstructor // 디폴트 생성자
 @Builder
