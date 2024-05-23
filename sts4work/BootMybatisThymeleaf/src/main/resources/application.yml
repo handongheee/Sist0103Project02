@@ -1,0 +1,21 @@
+#tomcat port
+server:
+  port: 9003
+ 
+#thymeleaf
+spring:
+  thymeleaf:
+    cache: false
+      
+#mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tea
+    username: han
+    password: 1234
+    
+#mybatis
+mybatis:
+  type-aliases-package: myshop.dto
+  mapper-locations:
+  - /mapper/**/*.xml

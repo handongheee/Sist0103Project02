@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="myshop.mapper.MyShopMapper">
+	<select id="getTotalCount" resultType="int">
+		select count(*) from myshop
+	</select>
+	
+	<insert id="insertShop" parameterType="ShopDto">
+		insert into myshop (sangpum, price, photo, color, writeday) values (#{sangpum},#{price},#{photo},#{color},now())
+	</insert>
+	
+	<!--  
+	<select id="getData" parameterType="String" resultType="ShopDto">
+		select * from myshop where num=#{num}
+	</select>
+	-->
+</mapper>

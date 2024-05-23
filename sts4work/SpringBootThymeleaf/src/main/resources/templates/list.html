@@ -24,7 +24,9 @@
 		
 		<tr th:each="dto,iter:${list}">
 			<td>
-				<a th:href="@{/detail(index=${iter.index})}"><span th:text="${iter.index}"></span></a> <!-- 0, 1, 2, 3 -->
+				<a th:href="@{/detail(index=${iter.index})}">
+					<span th:text="${iter.index}"></span>
+				</a> <!-- 0, 1, 2, 3 -->
 				<span th:text="${iter.count}"></span> <!-- 1, 2, 3, 4 -->
 			</td>
 			<td th:text="${dto.num}"></td>
