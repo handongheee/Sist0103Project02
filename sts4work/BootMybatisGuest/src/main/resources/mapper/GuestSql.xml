@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="boot.guest.mapper.GuestMapper">
+	<select id="getTotalCount" resultType="int">
+	   select count(*) from guest
+	</select>
+	<insert id="insertGuest" parameterType="GuestDto">
+	  insert into guest (nick,pass,photo,content,likes,writeday) values (#{nick},#{pass},#{photo},#{content},#{likes},now())
+	</insert>
+	<select id="getAllDatas" resultType="GuestDto">
+	  select * from guest order by num desc
+	</select>
+</mapper>
