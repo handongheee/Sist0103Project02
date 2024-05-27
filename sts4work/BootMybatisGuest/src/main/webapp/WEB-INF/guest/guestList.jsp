@@ -155,7 +155,32 @@
 						<hr>
 						
 						<button type="button" class="btn btn-outline-warning btn-sm" onclick="location.href=''">수정</button>
-						<button type="button" class="btn btn-outline-danger btn-sm" onclick="location.href=''">삭제</button>
+   				        <button type="button" class="btn btn-outline-danger btn-sm" onclick="del(${a.num})">삭제</button>
+
+						<!-- 삭제 처리 -->
+						<script type="text/javascript">
+							function del(num)
+							{
+								//alert(num);
+								//비밀번호 입력받기
+								let pass=prompt("비밀번호를 입력해주세요");
+								$.ajax({
+									type:"get",
+									dataType:"json",
+									url:"delete",
+									data:{"num":num,"pass":pass},
+									success:function(data){
+										if(data.status==1){
+											alert("삭제되었습니다");
+											location.reload();
+										}else{
+											alert("비밀번호가 맞지 않습니다");
+										}
+									}
+								});
+							}
+						</script>
+						
 					</td>
 				</tr>
 			</table>

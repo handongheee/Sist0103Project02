@@ -10,4 +10,11 @@
 	<select id="getAllDatas" resultType="GuestDto">
 	  select * from guest order by num desc
 	</select>
+	<!-- 비밀번호 체크 -->
+	<select id="isEqualPassCheck" parameterType="Map" resultType="int">
+		select count(*) from guest where num=#{num} and pass=#{pass}
+	</select>
+	<delete id="deleteGuest" parameterType="int">
+		delete from guest where num=#{num}
+	</delete>
 </mapper>
