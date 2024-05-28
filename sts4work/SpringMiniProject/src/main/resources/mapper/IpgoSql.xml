@@ -15,4 +15,23 @@
 	<select id="getAllDatas" resultType="IpgoDto">
 		select * from ipgo order by num
 	</select>
+	
+	<!-- 하나데이터 -->
+	<select id="getData" parameterType="String" resultType="IpgoDto">
+		select * from ipgo where num=#{num}
+	</select>
+	
+	<!-- 수정 -->
+	<update id="updateIpgo" parameterType="IpgoDto">
+		update ipgo set sangpum=#{sangpum}, price=#{price}
+		<if test="photoname!=null">
+			,photoname=#{photoname}
+		</if>
+		where num=#{num}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="deleteIpgo" parameterType="String">
+		delete from ipgo where num=#{num}
+	</delete>
 </mapper>

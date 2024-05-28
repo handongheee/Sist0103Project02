@@ -50,7 +50,7 @@ rel="stylesheet">
 			<a href="${root }/ipgo/list">상품목록</a>
 		</li>
 		<li>
-			<a href="${root }/member/list">회원목록</a>
+			<a href="${root }/member/myinfo">회원정보</a>
 		</li>
 		<li>
 			<a href="${root }/member/form">회원가입</a>

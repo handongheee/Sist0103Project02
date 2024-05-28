@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -97,4 +98,70 @@ public class IpgoController {
 		
 		return "redirect:list";
 	}
+	
+	@GetMapping("/ipgo/updateform")
+	public String updateform(@RequestParam String num, Model model) {
+		
+		IpgoDto dto=mapper.getData(num);
+		
+		model.addAttribute("dto", dto); // dto 저장
+		
+		return "/ipgo/updateForm";
+	}
+	
+	@PostMapping("/ipgo/update")
+	public String update(@ModelAttribute IpgoDto dto, @RequestParam ArrayList<MultipartFile> upload,
+			HttpSession session) {
+		String path=session.getServletContext().getRealPath("/ipgoimage");
+		
+		String uploadName="";
+		
+		// 이미지 저장
+		if(upload.get(0).getOriginalFilename().equals("")) {
+			uploadName=null;
+		} else {
+			for(MultipartFile f:upload) {
+				SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
+				
+				String fName=sdf.format(new Date())+"_"+f.getOriginalFilename();
+				uploadName+=fName+",";
+				
+				// 업로드
+				try {
+					f.transferTo(new File(path+"/"+fName));
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}			
+			}
+			
+			// 마지막 컴마 제거
+			uploadName=uploadName.substring(0, uploadName.length()-1);
+		}
+		
+		dto.setPhotoname(uploadName);
+		
+		mapper.updateIpgo(dto);
+		
+		return "redirect:list";
+	}
+	
+	@GetMapping("/ipgo/delete")
+	public String delete(@RequestParam String num, HttpSession session) {
+		String photo=mapper.getData(num).getPhotoname();
+		String path=session.getServletContext().getRealPath("/ipgoimage");
+		
+		File file=new File(path+"/"+photo);
+		if(file.exists()) {
+			file.delete();
+		}
+		
+		mapper.deleteIpgo(num);
+		
+		return "redirect:list";
+	}
+	
 }

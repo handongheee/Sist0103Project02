@@ -13,26 +13,12 @@ href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&family
 rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<title>title</title>
-<style type="text/css">
-	div.login{
-		position: absolute;
-		left: 800px;
-		top: 30px;
-		width: 350px;
-	}
-</style>
+<title>loginForm</title>
 </head>
 <body>
-	<c:set var="root" value="<%=request.getContextPath() %>"/>
-	<a href="/">
-		<img alt="" src="${root }/image/logo.png" style="width: 400px;">
-		<b>SpringBoot + Mybatis + Tiles3</b>
-	</a>
+	<h1>로그인폼</h1>
 	
-	<div class="login">
-		<button type="button" class="btn btn-success" style="width:100px" 
-		onclick="location.href='${root}/login/loginform'">login</button>
+	<div>
 		
 	</div>
 </body>
