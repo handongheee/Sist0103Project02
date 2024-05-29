@@ -108,4 +108,36 @@ public class MemberController {
 		return "/member/memberInfo";
 	}
 	
+	// 회원 목록 삭제
+	@GetMapping("/member/delete")
+	@ResponseBody
+	public void deleteMember(String num) {
+		service.deleteMember(num);
+	}
+	
+	// 이미지 수정 MultipartFile photo -> form name이 없을땐 db명으로
+	@PostMapping("/member/updatephoto")
+	@ResponseBody // ajax, json
+	public void photoUpload(String num, MultipartFile photo, HttpSession session) {
+		String path=session.getServletContext().getRealPath("/memberphoto");
+		
+		// 파일명 구하기
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
+		String fileName=sdf.format(new Date())+photo.getOriginalFilename();
+		
+		// 업로드
+		try {
+			photo.transferTo(new File(path+"/"+fileName));
+			
+			// db 사진 수정
+			service.updatePhoto(num, fileName);
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }

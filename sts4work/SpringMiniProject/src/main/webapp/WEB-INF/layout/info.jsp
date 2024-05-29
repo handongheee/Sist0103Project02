@@ -22,5 +22,14 @@ rel="stylesheet">
 	<i class="bi bi-building"></i> &nbsp; 서울시 종로구 새문안로 68 흥국생명빌딩 18층 한국 코카-콜라 <br>
 	<i class="bi bi-youtube"></i> &nbsp; 
 	<i class="bi bi-instagram"></i>
+	
+	<!-- 로그아웃 상태는 기본이미지, 로그인 상태는 로그인한 이미지 나오게 -->
+	<c:if test="${sessionScope.loginok==null }">
+		<img alt="" src="${root }/image/roundLogo.png" width="130" height="130" style="border-radius: 100px;">
+	</c:if>
+	<!-- 로그인 상태 -->
+	<c:if test="${sessionScope.loginok!=null }">
+		<img alt="" src="${root }/memberphoto/${sessionScope.loginphoto}" width="130" height="130" style="border-radius: 100px;">
+	</c:if>
 </body>
 </html>

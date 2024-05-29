@@ -16,10 +16,36 @@ rel="stylesheet">
 <title>loginForm</title>
 </head>
 <body>
-	<h1>로그인폼</h1>
-	
-	<div>
-		
+	<div style="margin: 100px 200px;">
+		<form action="loginprocess" method="post">
+			<table class="table table-bordered" style="width:250px;">
+				<caption align="top"><b>회원 로그인</b></caption>
+				<tr>
+					<td align="left">
+						<input type="text" name="id" class="form-control" required="required" placeholder="아이디 입력" style="width:200px;" value="${sessionScope.saveok==null?"":sessionScope.myid }">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<input type="password" name="pass" class="form-control" required="required" placeholder="비밀번호 입력" style="width:200px;">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<!-- 아이디 저장이 null이면 비체크 -->
+						<input type="checkbox" name="cbsave" ${sessionScope.saveok==null?"":"checked" }>아이디저장
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<button type="submit" class="btn btn-success btn-lg" style="width:200px;">로그인</button>
+					</td>
+				</tr>
+			</table>
+		</form>
 	</div>
 </body>
 </html>

@@ -13,16 +13,12 @@ href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&family
 rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<title>logoutForm</title>
+<title>passfail</title>
 </head>
-<c:set var="root" value="<%=request.getContextPath() %>"/>
 <body>
-<div style="margin-left: 100px 200px;">
-	<img alt="" src="${root }/image/bottle.png" align="left" hspace="20" width="250">
-	<br><br>
-	<b>${name }님 로그인중</b>
-	<br><br><br>
-	<button type="button" class="btnn btn-danger" style="width: 100px;" onclick="location.href='logoutprocess'">로그아웃</button>
-</div>
+<script type="text/javascript">
+	alert("로그인 실패");
+	history.back;
+</script>
 </body>
 </html>

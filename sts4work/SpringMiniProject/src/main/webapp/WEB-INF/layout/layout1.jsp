@@ -37,7 +37,7 @@ rel="stylesheet">
 		position: absolute;
 		top: 250px;
 		left: 30px;
-		height: 200px;
+		height: 330px;
 		width: 200px;
 		border: 5px solid purple;
 		border-radius: 30px;
