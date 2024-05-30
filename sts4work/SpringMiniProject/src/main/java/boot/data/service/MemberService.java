@@ -78,4 +78,10 @@ public class MemberService implements MemberServiceInter {
 		mapperInter.updatePhoto(map);
 	}
 
+	@Override
+	public void updateMember(MemberDto dto) {
+		// TODO Auto-generated method stub
+		mapperInter.updateMember(dto);
+	}
+
 }

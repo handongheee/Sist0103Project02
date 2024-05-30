@@ -16,6 +16,30 @@ rel="stylesheet">
 <title>boardList</title>
 </head>
 <body>
-<h1>보드 리스트</h1>
+<c:if test="${sessionScope.loginok!=null }">
+	<button type="button" class="btn btn-outline-success" style="width: 100px; margin-left: 900px;" onclick="location.href='form'">글쓰기</button>
+</c:if>
+<br><br>
+<table class="table table-bordered" style="width: 1000px;">
+	<tr class="table-primary">
+		<th width="60">번호</th>
+		<th width="460">제목</th>
+		<th width="160">작성자</th>
+		<th width="80">조회</th>
+		<th width="250">등록일</th>
+	</tr>
+	
+	<c:if test="${totalCount==0 }">
+		<tr height="50">
+			<td colspan="5" align="center">
+				<h3><b>등록된 글이 없습니다.</b></h3>
+			</td>
+		</tr>
+	</c:if>
+	
+	<c:if test="${totalCount>0 }">
+		
+	</c:if>
+</table>
 </body>
 </html>

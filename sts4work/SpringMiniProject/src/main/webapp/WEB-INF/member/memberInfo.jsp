@@ -33,16 +33,81 @@ rel="stylesheet">
 			
 			$.ajax({
 				type:"post",
-				dataType:"text",
+				dataType:"html",
 				url:"updatephoto",
 				processData:false,
 				contentType:false,
-				data:form,
+				data:form, // 생성된 폼데이터 넣기
 				success:function(){
 					location.reload();
 				}
 			})
 		});
+		
+		// 0530 수정버튼 클릭 시 모달 다이얼로그에 데이터 넣기
+		$(".btnupdate").click(function(){
+			updatenum=$(this).attr("num"); // 전역으로 생성
+			//alert(updatenum);
+			
+			$.ajax({
+				type:"get",
+				dataType:"json",
+				url:"updateform",
+				data:{"num":updatenum},
+				success:function(res){
+					console.dir(res);
+					$("#updatename").val(res.name);
+					$("#updatehp").val(res.hp);
+					$("#updateemail").val(res.email);
+					$("#updateaddr").val(res.addr);
+				}
+			});
+		});
+		
+		// 수정처리
+		$("#btnupdateok").click(function(){
+			//var unum=$(".btnupdate").attr("num"); => updatenum으로 활용
+			var uname=$("#updatename").val();
+			var uhp=$("#updatehp").val();
+			var uemail=$("#updateemail").val();
+			var uaddr=$("#updateaddr").val();
+			
+			var data="num="+updatenum+"&name="+uname+"&hp="+uhp+"&email="+uemail+"&addr="+uaddr;
+			//alert(uname);
+			
+			$.ajax({
+				type:"post",
+				dataType:"html",
+				url:"update",
+				//data:{"num":updatenum, "name":uname, "hp":uhp, "email":uemail, "addr":uaddr},
+				data:data,
+				success:function(){
+					location.reload();
+				}
+			});
+		});
+		
+		// 탈퇴
+		$(".btndelete").click(function(){
+			var num=$(this).attr("num");
+			//alert(num);
+			
+			var a=confirm("정말 탈퇴하시겠습니까?");
+			
+			if(a){
+				$.ajax({
+					type:"get",
+					dataType:"html",
+					url:"deleteme",
+					data:{"num":num},
+					success:function(){
+						alert("탈퇴하셨습니다.");
+						location.reload();
+					}
+				});
+			}
+		});
+		
 	});
 </script>
 </head>
@@ -67,8 +132,8 @@ rel="stylesheet">
 				</td>
 				
 				<td rowspan="5" align="center" valign="middle" style="width:200px;">
-					<button type="button" class="btn btn-outline-warning" num="${dto.num}">수정</button>
-					<button type="button" class="btn btn-outline-danger" num="${dto.num}">삭제</button>
+					<button type="button" class="btn btn-outline-warning btnupdate" num="${dto.num}" data-bs-toggle="modal" data-bs-target="#myUpdateModal">수정</button>
+					<button type="button" class="btn btn-outline-danger btndelete" num="${dto.num}">삭제</button>
 				</td>
 			</tr>
 			
@@ -99,5 +164,50 @@ rel="stylesheet">
 		</c:forEach>
 	</table>
 </div>
+
+<!-- The Modal -->
+<div class="modal" id="myUpdateModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">회원정보 수정</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="d-inline-flex" style="margin-bottom: 10px;">
+        	<label style="width: 80px;">이름: </label> &nbsp;&nbsp;
+        	<input type="text" class="form-control" id="updatename">
+        </div>
+        
+        <div class="d-inline-flex" style="margin-bottom: 10px;">
+        	<label style="width: 80px;">연락처: </label>&nbsp;&nbsp;
+        	<input type="text" class="form-control" id="updatehp">
+        </div>
+        
+        <div class="d-inline-flex" style="margin-bottom: 10px;">
+        	<label style="width: 80px;">이메일: </label>&nbsp;&nbsp;
+        	<input type="text" class="form-control" id="updateemail">
+        </div>
+        
+        <div class="d-inline-flex" style="margin-bottom: 10px;">
+        	<label style="width: 80px;">주소: </label>&nbsp;&nbsp;
+        	<input type="text" class="form-control" id="updateaddr">
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-warning" data-bs-dismiss="modal" id="btnupdateok">수정</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">취소</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
