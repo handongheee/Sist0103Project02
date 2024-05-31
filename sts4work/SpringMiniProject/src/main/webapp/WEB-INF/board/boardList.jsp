@@ -23,7 +23,7 @@ rel="stylesheet">
 <table class="table table-bordered" style="width: 1000px;">
 	<tr class="table-primary">
 		<th width="60">번호</th>
-		<th width="460">제목</th>
+		<th width="360">제목</th>
 		<th width="160">작성자</th>
 		<th width="80">조회</th>
 		<th width="250">등록일</th>
@@ -37,9 +37,60 @@ rel="stylesheet">
 		</tr>
 	</c:if>
 	
-	<c:if test="${totalCount>0 }">
-		
-	</c:if>
+	 <c:if test="${totalCount>0 }">
+      <c:forEach  var="a" items="${list }">
+          <tr>
+            <td align="center">${no }</td>  
+            <c:set var="no" value="${no-1 }"/>
+            <td>
+               <a href="content?num=${a.num }&currentPage=${currentPage}" style="text-decoration:none; color: black;">
+                 ${a.subject }
+               </a>
+               <c:if test="${a.uploadfile!='no' }">
+                   <i class="bi bi-image" style="color: gray;"></i>
+               </c:if>
+               
+            </td>
+            <td>${a.name }</td>
+            <td>${a.readcount }</td>
+            <td>
+              <fmt:formatDate value="${a.writeday }" pattern="yyyy-MM-dd"/>
+            </td>
+          </tr>
+      </c:forEach>
+   </c:if>
 </table>
+
+	<!-- 페이징 -->
+	<div style="margin-top: 100px; width: 1000px; text-align: center;">
+		<ul class="pagination justify-content-center">
+			<!-- 이전 -->
+			<c:if test="${startPage>1 }">
+				<li class="page-item"><a class="page-link"
+					href="list?currentPage=${startPage-1 }" style="color: black;">이전</a>
+				</li>
+			</c:if>
+
+			<!-- 페이지번호 -->
+			<c:forEach var="pp" begin="${startPage }" end="${endPage }">
+				<c:if test="${currentPage==pp }">
+					<li class="page-item active"><a class="page-link"
+						href="list?currentPage=${pp }">${pp }</a></li>
+				</c:if>
+
+				<c:if test="${currentPage!=pp }">
+					<li class="page-item"><a class="page-link"
+						href="list?currentPage=${pp }">${pp }</a></li>
+				</c:if>
+			</c:forEach>
+
+			<!-- 다음 -->
+			<c:if test="${endPage<totalPage }">
+				<li class="page-item"><a class="page-link"
+					href="list?currentPage=${endPage+1 }" style="color: black">다음</a></li>
+			</c:if>
+		</ul>
+	</div>
+
 </body>
 </html>

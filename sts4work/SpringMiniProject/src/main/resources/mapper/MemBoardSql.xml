@@ -15,7 +15,7 @@
 	</select>
 	
 	<select id="getData" parameterType="String" resultType="MemBoardDto">
-		select * from mamboard where num=#{num}
+		select * from memboard where num=#{num}
 	</select>
 	
 	<update id="updateReadCount" parameterType="String">

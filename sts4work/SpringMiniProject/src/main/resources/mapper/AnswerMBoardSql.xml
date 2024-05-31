@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="boot.data.mapper.AnsMBoardMapperInter">
+	<insert id="insertAnswer" parameterType="AnswerMBoardDto">
+		insert into answermboard (num,name,myid,content,writeday) values (#{num},#{name},#{myid},#{content},now())
+	</insert>
+	
+	<select id="getAllAnswer" parameterType="String" resultType="AnswerMBoardDto">
+		select * from answermboard where num=#{num} order by idx desc
+	</select>
+	
+	<select id="getAnswer" parameterType="String" resultType="AnswerMBoardDto">
+		select * from answermboard where idx=#{idx}
+	</select>
+	
+	<update id="updateAnswer" parameterType="AnswerMBoardDto">
+		update answermboard set content=#{content} where idx=#{idx}
+	</update>
+	
+	<delete id="deleteAnswer" parameterType="String">
+		delete from answermboard where idx=#{idx}
+	</delete>
+</mapper>
