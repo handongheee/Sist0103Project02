@@ -41,13 +41,28 @@ public class AnswerBoardRestController {
 		//insert
 		service.insertAnswer(dto);
 	}
+	
 	//전체출력
 	@GetMapping("/board/alist")
 	public List<AnswerMBoardDto> alist(String num)
 	{
 		return service.getAllAnswer(num);
 	}
-	//수정
 	
-	//삭제
+	// 0603 수정
+	@GetMapping("/board/adata")
+	public AnswerMBoardDto adata(String idx) {
+		return service.getAnswer(idx);
+	}
+	
+	@PostMapping("/board/aupdate")
+	public void aupdate(AnswerMBoardDto dto) {
+		service.updateAnswer(dto);
+	}
+	
+	// 0603 삭제
+	@GetMapping("/board/adelete")
+	public void delete(String idx) {
+		service.deleteAnswer(idx);
+	}
 }

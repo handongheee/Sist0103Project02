@@ -45,9 +45,14 @@ rel="stylesheet">
             <td>
                <a href="content?num=${a.num }&currentPage=${currentPage}" style="text-decoration:none; color: black;">
                  ${a.subject }
+                 
                </a>
                <c:if test="${a.uploadfile!='no' }">
                    <i class="bi bi-image" style="color: gray;"></i>
+               </c:if>
+               
+               <c:if test="${a.acount>0 }">
+               	   <a style="color: red; text-decoration: none;" href="content?num=${a.num }&currentPage=${currentPage}">[${a.acount }]</a>
                </c:if>
                
             </td>

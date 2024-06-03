@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import boot.data.dto.MemBoardDto;
+import boot.data.service.AnsMBoardService;
 import boot.data.service.MemBoardService;
 import boot.data.service.MemberService;
 
@@ -28,6 +29,10 @@ public class BoardController {
 	
 	@Autowired
 	MemberService mservice;
+	
+	// 0603 추가 - 댓글개수 출력
+	@Autowired
+	AnsMBoardService aservice;
 
 	@GetMapping("/board/list")
 	public ModelAndView list(@RequestParam(value="currentPage", defaultValue="1")int currentPage) {
@@ -73,6 +78,12 @@ public class BoardController {
 		// 리스트
 		List<MemBoardDto> list = service.getList(start, perPage);
 
+		// 0603 댓글 개수
+		for(MemBoardDto d:list) {
+			d.setAcount(aservice.getAllAnswer(d.getNum()).size()); // 댓글이 리스트에 포함됨
+			System.out.println(aservice.getAllAnswer(d.getNum()).size());
+		}
+		
 		// request 저장
 		mview.addObject("totalCount", totalCount);
 		mview.addObject("list", list);
