@@ -20,7 +20,7 @@ public class ReBoardService implements ReBoardServiceInter {
 	public int getTotalCount(String searchcolumn, String searchword) {
 		// TODO Auto-generated method stub
 		Map<String, String> map=new HashMap<>();
-		map.put("searchcolumn", searchword);
+		map.put("searchcolumn", searchcolumn);
 		map.put("searchword", searchword);
 		
 		return mapperInter.getTotalCount(map);

@@ -57,6 +57,8 @@ public class LoginController {
 			MemberDto mdto=service.getDataById(id);
 			
 			session.setAttribute("loginphoto", mdto.getPhoto());
+			// 0604 추가 - 로그인 이름 빠르게 구하기
+			session.setAttribute("loginname", mdto.getName());
 			
 			return "redirect:main";
 		} else {

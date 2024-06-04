@@ -44,7 +44,7 @@ rel="stylesheet">
 			<a href="${root }/">HOME</a>
 		</li>
 		<li>
-			<a href="${root }/ipgo/writeform">상품등록</a>
+			<a href="${root }/reboard/list">답변형게시판</a>
 		</li>
 		<li>
 			<a href="${root }/ipgo/list">상품목록</a>
