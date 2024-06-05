@@ -106,6 +106,16 @@
            <version>3.0.8</version>
         </dependency>   
    </dependencies>
+   
+   <!-- 스마트게시판 - https://mvnrepository.com/artifact/servlets.com/cos -->
+	<dependency>
+	    <groupId>servlets.com</groupId>
+	    <artifactId>cos</artifactId>
+	    <version>05nov2002</version>
+	</dependency>
+   
+   
+   
 
    <build>
       <plugins>

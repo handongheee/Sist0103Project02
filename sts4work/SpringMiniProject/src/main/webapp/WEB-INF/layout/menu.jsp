@@ -19,12 +19,12 @@ rel="stylesheet">
 		list-style: none;
 	}
 	ul.menu li {
-		width: 130px;
+		width: 120px;
 		float: left;
 		border: 1px solid mint;
-		height: 60px;
+		height: 55px;
 		text-align: center;
-		line-height: 60px;
+		line-height: 55px;
 		margin-right: 10px;
 		font-size: 1.2em;
 		font-family: 'Noto Sans KR';
@@ -60,6 +60,9 @@ rel="stylesheet">
 		</li>
 		<li>
 			<a href="${root }/load/map">오시는길</a>
+		</li>
+		<li>
+			<a href="${root }/smart/form">스마트게시판</a>
 		</li>
 		
 	</ul>
